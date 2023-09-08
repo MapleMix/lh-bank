@@ -1,15 +1,11 @@
 <script setup lang="ts">
 import CardCoupon from "/ChocoCRM/lh-bank/src/components/card/CardCoupon.vue"
-
-//  export default {
-//  name: "coupon-list",
-// };
 </script>
 
 <template>
-  <div style="background-color: #F8F8F8;">
-    <div class="container">
-      <div class="row pt-5 px-2 div-coupon-list">
+  <div style="background-color: #F8F8F8;" class="position-relative">
+    <div class="container div-coupon-list ">
+      <div class="row pt-5 px-2 position-relative">
         <div class="col-4">
           <router-link
             to="/"
@@ -22,16 +18,14 @@ import CardCoupon from "/ChocoCRM/lh-bank/src/components/card/CardCoupon.vue"
             />
           </router-link>
         </div>
-        <div class="col-4">
+        <div class="col-6">
           <b>พิเศษเฉพาะคุณ</b>
         </div>
       </div>
     </div>
-    <div class="card-list">
+    <div class="card-list mx-3">
       <CardCoupon/>
     </div>
-  
-
   </div>
 </template>
 
@@ -39,7 +33,8 @@ import CardCoupon from "/ChocoCRM/lh-bank/src/components/card/CardCoupon.vue"
 .div-coupon-list {
   background-color: #cd7b56;
   border-radius: 0px 0px 36px 36px;
-  width: 500px;
+  max-width: 500px;
+  width: 100%;
   height: 200px;
   overflow: hidden;
 }

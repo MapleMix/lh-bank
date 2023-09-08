@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { useModalStore } from "../../stores/useModalStore";
 
 const props = defineProps({
   getUsers: {
@@ -19,11 +18,11 @@ const props = defineProps({
 
 <template>
   <div
+  class="position-relative menu-bar-wrapper w-100 h-100"
     v-for="listData in props.getUsers.filter((datas:any) => datas.id === $route.params.id)"
-    v-if="useModalStore.open === false"
   >
-    <div v-if="listData.amount >= 1">
-      <div v-if="listData.is_already === true">
+    <div v-if="listData.amount >= 1" class="">
+      <div v-if="listData.is_already === true" c>
         <div class="div-menu-bar card border-0 shadow-sm text-center">
           <div class="mt-3">
             <button
@@ -37,16 +36,34 @@ const props = defineProps({
         </div>
       </div>
       <div v-if="listData.is_already === false">
-        <div class="div-menu-bar card border-0 shadow-sm text-center">
-          <div class="mt-3">
-            <button
-              type="button"
-              class="btn btn-primary button-coupon-view"
-              :data-bs-toggle="props.toggle"
-              :data-bs-target="props.target"
-            >
-              แลกฟรี
-            </button>
+        <!-- type code -->
+        <!-- <div v-if="listData.status === 0">
+          <div class="div-menu-bar card border-0 shadow-sm text-center">
+            <div class="mt-3">
+              <button
+                type="button"
+                class="btn btn-primary button-coupon-view"
+                :data-bs-toggle="props.toggle"
+                :data-bs-target="props.target"
+              >
+                แลกฟรี
+              </button>
+            </div>
+          </div>
+        </div> -->
+        <!-- type from -->
+        <div>
+          <div class="div-menu-bar card border-0 shadow-sm text-center h">
+            <div class="mt-3">
+              <button
+                type="button"
+                class="btn btn-primary button-coupon-view"
+                :data-bs-toggle="props.toggle"
+                :data-bs-target="props.target"
+              >
+                แลกฟรี
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -70,9 +87,13 @@ const props = defineProps({
 </template>
 
 <style>
+.menu-bar-wrapper {
+  height: 100px;
+}
 .div-menu-bar {
   background-color: #ffffff;
-  width: 500px;
+  max-width: 500px;
+  width: 100%;
   height: 100px;
   position: fixed;
   bottom: 0px;

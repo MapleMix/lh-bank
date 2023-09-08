@@ -9,6 +9,7 @@ const props = defineProps({
 
 <template>
   <div
+  class="position-relative w-100 h-100"
     v-for="listData in props.getUsers.filter((datas:any) => datas.id === $route.params.id)">
     <div v-if="listData.id">
       <div class="container d-flex justify-content-center mt-4">
@@ -24,9 +25,9 @@ const props = defineProps({
               </b>
             </div>
             <br />
-            <div class="mt-2">
+            <div >
               <b>เงื่อนไขการรับสิทธิ์</b>
-              <p class="mb-5">
+              <p >
                 1. 1 ท่าน / สิทธิ์ /เดือน (สิทธิ์มีจำนวนจำกัด) <br />
                 2.กดรับสิทธิ์กับพนักงานที่ร้านเท่านั้น
                 ไม่สามารถใช้รหัสที่เกิดจาก การบันทึกภาพหน้าจอได้ <br />
@@ -53,8 +54,8 @@ const props = defineProps({
 
 <style>
 .img-coupon-view {
-  width: 450px;
-  height: 450px;
+  max-width: 450px;
+  max-height: 450px;
   border-radius: 14px;
 }
 .info-coupon-view {

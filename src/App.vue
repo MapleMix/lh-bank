@@ -1,26 +1,17 @@
-<script setup lang="ts">
-// import HelloWorld from './components/HelloWorld.vue'
-// import HeaderBar from "./components/bar/HeaderBar.vue";
-// import MenuBar from "./components/bar/MenuBar.vue";
-// import SpecialCoupon from "./views/special-coupon/SpecialCoupon.vue";
-// import Coupon from "./views/coupon/Coupon.vue";
-// import CouponList from "./views/coupon/CouponList.vue";
-
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  
-
-  <div class="d-flex justify-content-center container" >
-    <div class="size-page" >
-      <router-view></router-view> 
+  <div class="position-relative w-100 h-100">
+    <div class="size-page m-auto">
+      <router-view></router-view>
     </div>
   </div>
 </template>
 
 <style scoped>
 .size-page {
-  width: 500px;
+  max-width: 500px;
+  width: 100%;
   height: auto;
 }
 .icons {
@@ -38,5 +29,21 @@
 }
 .logo.vue:hover {
   filter: drop-shadow(0 0 2em #42b883aa);
+}
+</style>
+
+<style>
+.modal-open {
+  padding: 0 !important;
+}
+
+.modal-backdrop {
+  width: 100%;
+  height: 100%;
+}
+
+.modal {
+  padding-right:0px !important;
+  padding: 2rem !important;
 }
 </style>

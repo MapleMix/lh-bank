@@ -1,10 +1,42 @@
 <script setup lang="ts">
+import { Ref, ref, watch } from "vue";
 import { useModalStore } from "../../stores/useModalStore";
 
+const props = defineProps({
+  getUsers: {
+    type: Object,
+    required: true,
+  },
+  params: {
+    required: true,
+  },
+  statusType: {
+    type: Object,
+    required: true,
+  },
+});
+
+const statusTypeState: Ref<any> = ref(null); 
+watch(
+  () => props.statusType,
+  (val) => {
+    statusTypeState.value = val; // new state
+  }
+);
+
+const handlClickButtonType = () => {
+  const { status } = statusTypeState.value;
+  if (status === 0) {
+    useModalStore.handlSendCode();
+  } else if (status === 1) {
+      useModalStore.handlSendForm();
+  }
+};
 </script>
 
 <template>
-  <div
+  <div class="position-relative">
+    <div
     class="modal fade"
     id="staticBackdrop"
     data-bs-backdrop="static"
@@ -43,13 +75,14 @@ import { useModalStore } from "../../stores/useModalStore";
             type="button"
             class="btn btn-primary btn-lg button-modal-send"
             data-bs-dismiss="modal"
-            @click="useModalStore.handlSend()"
+            @click="handlClickButtonType()"
           >
             ยืนยัน
           </button>
         </div>
       </div>
     </div>
+  </div>
   </div>
 </template>
 
@@ -99,6 +132,4 @@ import { useModalStore } from "../../stores/useModalStore";
     var(--bs-modal-header-border-color);
   padding-top: 10px;
 }
-
-
 </style>

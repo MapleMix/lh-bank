@@ -13,10 +13,10 @@ onMounted(() => {
 </script>
 
 <template>
-  <div>
+  <div class="position-relative ">
     <div class="d-flex align-items-center row-cols-2 div-background">
       <div
-        class="card border-0 shadow col p-2 card-special-coupon"
+        class="card border-0 shadow col p-2 card-special-coupon "
         v-for="listData in getUsers.filter((getUser:any) => getUser.is_special === true)"
       >
         <div
@@ -55,9 +55,11 @@ onMounted(() => {
 <style>
 .div-background {
   background-color: #efded7;
-  width: 500px;
+  max-width: 500px;
+  width: 100%;
   height: 275px;
   overflow: scroll;
+  padding-right: 10px;
 }
 .div-background::-webkit-scrollbar {
   display: none;

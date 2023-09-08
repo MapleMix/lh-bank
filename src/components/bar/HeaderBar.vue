@@ -1,42 +1,63 @@
-<script lang="ts">
-export default {
-  name: "header-bar",
+<script setup lang="ts">
+import { reactive } from "vue";
+import { useSearchCouponStore } from "../../stores/useSearchCouponStore";
+
+const props = defineProps({
+  type: {
+    type: String,
+    required: true,
+  },
+});
+let search = reactive({
+  textSearch: "",
+});
+
+const onSearch = () => {
+  useSearchCouponStore.textSearch = search.textSearch;
 };
 </script>
 
 <template>
-  <div>
-    <div class="container">
-      <div class="row div showa">
+  <div class="position-relative">
+    <div class="d-flex justify-content-center">
+      <div class="row div showa d-flex justify-content-center">
         <div class="d-flex justify-content-between mt-4">
           <div class="circle-yellow"></div>
-          <div>
+          <div v-if="props.type !== 'history'">
             <img
               src="/src/assets/images/artworks/Screenshot 2023-08-11 105252.png"
               alt=""
               class="logo mt-3"
             />
           </div>
+          <div v-if="props.type === 'history'" class="position-relative mt-5 d-flex justify-content-center">
+            <b class="font-size-15">ประวัติการแลกของรางวัล </b>
+          </div>
           <div class="circle-purple"></div>
         </div>
-        <div class="d-flex justify-content-center" >
-          <div class="d-flex justify-content-center t-1 mt-4 mb-5">
+        <div class="position-relative">
+          <div
+            v-if="props.type !== 'history'"
+            class="d-flex justify-content-center t-1 mt-5 mb-5"
+          >
             <input
               type="text"
               class="input-underline"
               placeholder="ค้นหา"
               aria-label="ค้นหา"
+              v-model="search.textSearch"
             />
 
-            <span
+            <button
               class="input-group-text search-button d-flex justify-content-center"
+              @click="onSearch"
             >
               <img
                 src="/src/assets/images/icons/svg/search-icon.svg"
                 alt=""
                 class="icon-bar"
               />
-            </span>
+            </button>
           </div>
         </div>
       </div>
@@ -52,7 +73,8 @@ export default {
 .div {
   background-color: #ffffff;
   border-radius: 0px 0px 36px 36px;
-  width: 500px;
+  max-width: 500px;
+  width: 100%;
   height: 200px;
   overflow: hidden;
 }
@@ -79,8 +101,9 @@ export default {
 }
 .circle-purple {
   border-radius: 50%;
-  width: 168px;
-  height: 168px;
+  max-width: 168px;
+  max-height: 168px;
+  width: 100%;
   background: var(--unnamed-color-a7a2ca) 0% 0% no-repeat padding-box;
   background: #a7a2ca 0% 0% no-repeat padding-box;
   opacity: 0.3;
@@ -88,10 +111,14 @@ export default {
   margin-right: -60px;
 }
 .input-underline {
-  width: 300px;
+  max-width: 300px;
+  width: 100%;
   border: 0;
   outline: 0;
   background: transparent;
-  border-bottom: 2px solid #C7C9C7;
+  border-bottom: 2px solid #c7c9c7;
+}
+.font-size-15 {
+  font-size: 15px;
 }
 </style>
