@@ -38,7 +38,7 @@ onMounted(() => {
     >
       <div class="position-relative d-flex justify-content-center">
         <div class="position-relative mt-4 div-delivery-view mx-4">
-          <div class="row m-2 position-relative">
+          <div class="row m-2 position-relative margin-progress">
             <div class="col text-center">
               <div class="row">
                 <img
@@ -79,26 +79,29 @@ onMounted(() => {
             aria-valuemax="100"
             style="height: 6px"
           >
-            <div class="progress-bar" style="width: 81%">
-              <div>
-                <img
-                  src="../../assets/images/icons/svg/check-mark-icon.svg"
-                  alt=""
-                  class="icon-status-delivery-1"
-                />
-
-                <img
-                  src="../../assets/images/icons/svg/check-mark-icon.svg"
-                  alt=""
-                  class="icon-status-delivery-2"
-                />
-
-                <img
-                  src="../../assets/images/icons/svg/check-mark-icon.svg"
-                  alt=""
-                  class="icon-status-delivery-3"
-                />
-              </div>
+            <div class="progress-bar" style="width:16.66%"></div>
+          </div>
+          <div class="position-relative check-mark row">
+            <div class="col-4">
+              <img
+                src="../../assets/images/icons/svg/check-mark-icon.svg"
+                alt=""
+                class="icon-status-delivery-1"
+              />
+            </div>
+            <div class="col-4 ">
+              <img
+                src="../../assets/images/icons/svg/check-mark-icon.svg"
+                alt=""
+                class="icon-status-delivery-2"
+              />
+            </div>
+            <div class="col-4">
+              <img
+                src="../../assets/images/icons/svg/check-mark-icon.svg"
+                alt=""
+                class="icon-status-delivery-3"
+              />
             </div>
           </div>
         </div>
@@ -210,6 +213,7 @@ onMounted(() => {
   opacity: 1;
   padding-top: 4px;
   padding-left: 3px;
+  
 }
 .div-tracking-number {
   max-width: 500px;
@@ -220,25 +224,28 @@ onMounted(() => {
   opacity: 1;
 }
 .icon-status-delivery-1 {
-  position: absolute;
-  max-width: 25px;
-  width: 100%;
-  margin-top: -12px;
-  margin-left: -97px;
+  width: 25px;
+    margin-top: -12px;
+    margin-left: 50%;
+    position: relative;
+    display: block;
+    transform: translateX(-50%);
 }
 .icon-status-delivery-2 {
-  position: absolute;
-  max-width: 25px;
-  width: 100%;
-  margin-top: -12px;
-  margin-left: 26px;
+  width: 25px;
+    margin-top: -12px;
+    margin-left: 50%;
+    position: relative;
+    display: block;
+    transform: translateX(-50%);
 }
 .icon-status-delivery-3 {
-  position: absolute;
-  max-width: 25px;
-  width: 100%;
-  margin-top: -12px;
-  margin-left: 146px;
+  width: 25px;
+    margin-top: -12px;
+    margin-left: 50%;
+    position: relative;
+    display: block;
+    transform: translateX(-50%);
 }
 .progress-bar {
   background-color: #91bcbf;
@@ -250,5 +257,14 @@ onMounted(() => {
 }
 .fs-12 {
   font-size: 13px;
+}
+.check-mark {
+  margin-left: 5.5%;
+  margin-right: 5.5%;
+  margin-top: -3px;
+}
+.margin-progress {
+  margin-left: 5.5% !important;
+  margin-right: 5.5% !important;
 }
 </style>
