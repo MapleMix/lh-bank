@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import HeaderBar from "../../components/bar/HeaderBar.vue";
 import { Ref, computed, onMounted, ref } from "vue";
-import { useCustomerStore } from "/ChocoCRM/lh-bank/src/stores/useCustomerStore";
+import { useCustomerStore } from "../../stores/useCustomerStore";
 import { useModalStore } from "../../stores/useModalStore";
 import MenuBar from "../../components/bar/MenuBar.vue";
 import PopupRedeem from "../../components/pop-up/PopupRedeem.vue";

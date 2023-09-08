@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, onMounted } from "vue";
-import { useCustomerStore } from "/ChocoCRM/lh-bank/src/stores/useCustomerStore";
+import { useCustomerStore } from "../../stores/useCustomerStore";
 
 const store = useCustomerStore();
 const getUsers = computed(() => {

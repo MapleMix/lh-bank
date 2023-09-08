@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import HeaderBar from "/ChocoCRM/lh-bank/src/components/bar/HeaderBar.vue";
-import MenuBar from "/ChocoCRM/lh-bank/src/components/bar/MenuBar.vue";
+import HeaderBar from "../../components/bar/HeaderBar.vue";
+import MenuBar from "../../components/bar/MenuBar.vue";
 import SpecialCoupon from "../special-coupon/SpecialCoupon.vue";
 import CardCoupon from "../../components/card/CardCoupon.vue";
 import { useSearchCouponStore } from "../../stores/useSearchCouponStore";

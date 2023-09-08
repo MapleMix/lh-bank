@@ -108,7 +108,6 @@ const getUsers = computed(() => {
 
 .card-list {
   margin-top: -100px;
-  /* position: absolute; */
 }
 .div-view-address {
   top: 161px;

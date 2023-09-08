@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import CardCoupon from "/ChocoCRM/lh-bank/src/components/card/CardCoupon.vue"
+import CardCoupon from "../../components/card/CardCoupon.vue"
 </script>
 
 <template>

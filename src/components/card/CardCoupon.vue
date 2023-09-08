@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, onMounted, ref, Ref, watch } from "vue";
-import { useCustomerStore } from "/ChocoCRM/lh-bank/src/stores/useCustomerStore";
+import { useCustomerStore } from "../../stores/useCustomerStore";
 import { useSearchCouponStore } from "../../stores/useSearchCouponStore";
 
 const store = useCustomerStore();

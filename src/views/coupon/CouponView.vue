@@ -4,7 +4,7 @@ import PopupRedeem from "../../components/pop-up/PopupRedeem.vue";
 import ButtonBar from "../../components/bar/ButtonBar.vue";
 import ConfirmRedeemModal from "../../components/modal/ConfirmRedeemModal.vue";
 import { computed, onBeforeMount, onMounted, ref } from "vue";
-import { useCustomerStore } from "/ChocoCRM/lh-bank/src/stores/useCustomerStore";
+import { useCustomerStore } from "../../stores/useCustomerStore";
 import { useRoute } from "vue-router";
 import PopupRedeemForm from "../../components/pop-up/PopupRedeemForm.vue";
 
