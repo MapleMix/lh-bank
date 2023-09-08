@@ -21,8 +21,8 @@ const props = defineProps({
   class="position-relative menu-bar-wrapper w-100 h-100"
     v-for="listData in props.getUsers.filter((datas:any) => datas.id === $route.params.id)"
   >
-    <div v-if="listData.amount >= 1" class="">
-      <div v-if="listData.is_already === true" c>
+    <div v-if="listData.amount >= 1" class="menu-bar-wrapper">
+      <div v-if="listData.is_already === true">
         <div class="div-menu-bar card border-0 shadow-sm text-center">
           <div class="mt-3">
             <button

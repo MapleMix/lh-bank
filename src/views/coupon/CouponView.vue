@@ -31,7 +31,7 @@ onMounted(() => {
 <template>
   <div class="position-relative w-100 h-100 background-f8f8f8 ">
     <div class="">
-      <div class="row pt-5 px-2 position-relative">
+      <div class="row pt-5 px-2 position-relative w-100">
         <div class="col-4">
           <router-link to="/" style="text-decoration: none; color: inherit">
             <img
